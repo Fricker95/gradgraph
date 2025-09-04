@@ -1,0 +1,12 @@
+gudhi==3.10.1
+h5py==3.10.0
+matplotlib==3.8.2
+networkx==3.4.2
+numpy==1.26.4
+orjson==3.10.12
+scipy==1.11.4
+setuptools==80.9.0
+tensorflow==2.16.1
+keras==3.1.1
+tqdm==4.66.1
+
