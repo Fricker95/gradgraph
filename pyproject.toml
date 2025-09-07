@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0", "setuptools-scm"]
+requires = ["setuptools>=61.0", "setuptools-scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -13,7 +13,7 @@ authors = [
 	{ name = "Nicolas Fricker", email = "nicolas.fricker@univ-cotedazur.fr" },
 ]
 dependencies = [
-	"gudhi==3.10.1",
+	"gudhi>=3.10.1",
 	"h5py==3.10.0",
 	"matplotlib==3.8.2",
 	"networkx==3.4.2",
@@ -31,6 +31,10 @@ classifiers = [
 	"Topic :: Scientific/Engineering :: Bio-Informatics",
 	"License :: OSI Approved :: MIT License",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gradgraph*"]
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
