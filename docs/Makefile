@@ -1,6 +1,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SPHINXDOCS    ?= sphinx-apidoc
+TEMPLATEDIR   ?= _templates
 SOURCEDIR     = source
 BUILDDIR      = build
 PACKAGE       = gradgraph
@@ -16,7 +17,9 @@ clean:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 rst:
-	@$(SPHINXDOCS) -o "$(SOURCEDIR)" "$(PACKAGEDIR)" -e -M
+	@$(SPHINXDOCS) -o "$(SOURCEDIR)" "$(PACKAGEDIR)" -e -M --no-toc
+
+# -f -t $(SOURCEDIR)/$(TEMPLATEDIR)
 
 %: Makefile rst
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

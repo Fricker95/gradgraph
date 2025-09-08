@@ -35,7 +35,7 @@ autodoc_default_options = {
 }
 
 autodoc_typehints = 'description'
-typehints_fully_qualified = False
+typehints_fully_qualified = True
 
 napoleon_numpy_docstring = True
 napoleon_google_docstring = False
@@ -52,6 +52,12 @@ add_module_names = False
 templates_path = ['_templates']
 exclude_patterns = []
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    "collapse_navigation": False,
+    "navigation_depth": 5,
+    "titles_only": False,
+}
+# html_theme = 'alabaster'
 html_static_path = ['_static']
 
