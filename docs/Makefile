@@ -3,7 +3,7 @@ SPHINXBUILD   ?= sphinx-build
 SPHINXDOCS    ?= sphinx-apidoc
 SOURCEDIR     = source
 BUILDDIR      = build
-PACKAGE				= gradgraph
+PACKAGE       = gradgraph
 PACKAGEDIR    = ../
 
 help:
@@ -19,4 +19,4 @@ rst:
 
 clean:
 	@rm $(SOURCEDIR)/$(PACKAGE)*.rst
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(0)
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
