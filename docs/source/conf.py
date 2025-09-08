@@ -16,6 +16,8 @@ copyright = '2025, Nicolas Fricker'
 author = 'Nicolas Fricker'
 release = '1.0.0'
 
+root_doc = "index"
+
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
