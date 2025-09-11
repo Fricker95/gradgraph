@@ -144,19 +144,19 @@ def find_apical_paths(
         else lambda n: iter(sort_neighbors(G.neighbors(n)))
     )
     degrees = dict(G.degree())
-    apexes = list(n for n, d in degrees.items() if d == 1)
+    apexes = (n for n, d in degrees.items() if d == 1)
     weights: dict = nx.get_node_attributes(G, weight, default=1)
 
     for apex in apexes:
         stack = [(apex, [apex])]
         while stack:
             u, path = stack.pop()
-            uw = weights.get(u, None)
+            uw = weights.get(u, np.nan)
             for v in neighbors_func(u):
                 if v in path:
                     continue
-                vw = weights.get(v, None)
-                if not (uw and vw and vw <= uw):
+                vw = weights.get(v, np.nan)
+                if not (np.isfinite(uw) and np.isfinite(vw) and vw <= uw):
                     continue
                 new_path = path + [v]
                 if degrees[v] > 2:
