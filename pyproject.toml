@@ -41,9 +41,9 @@ Documentation = "https://gradgraph.readthedocs.io/en/latest/"
 where = ["."]
 include = ["gradgraph*"]
 
-[tool.setuptools_scm]
-version_scheme = "post-release"
-local_scheme = "no-local-version"
+# [tool.setuptools_scm]
+# version_scheme = "post-release"
+# local_scheme = "no-local-version"
 
 [tool.pydocstyle]
 convention = "numpy"
