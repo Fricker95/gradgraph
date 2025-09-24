@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm[toml]>=8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gradgraph"
+dynamic = ["version"]
+authors = [
+	{ name = "Nicolas Fricker", email = "nicolas.fricker@univ-cotedazur.fr" },
+]
+description = "Core library for graph-structured parameter optimization via gradient methods."
+readme = "README.md"
+requires-python = ">=3.11"
+# license = { text = "MIT" }
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+	"gudhi>=3.10.1",
+	"h5py>=3.10.0",
+	"matplotlib>=3.8.2",
+	"networkx>=3.4.2",
+	"numpy>=1.26.4",
+	"orjson>=3.10.12",
+	"scipy>=1.11.4",
+	"tensorflow>=2.16.1",
+	"keras>=3.1.1",
+	"tqdm>=4.67.1",
+]
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+	"Intended Audience :: Science/Research",
+	"Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Homepage = "https://github.com/Fricker95/gradgraph"
+Issues = "https://github.com/Fricker95/gradgraph/issues"
+Documentation = "https://gradgraph.readthedocs.io/en/latest/"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gradgraph*"]
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "no-local-version"
+
+[tool.pydocstyle]
+convention = "numpy"
+add-ignore = ["D100", "D104"]
+
+[project.optional-dependencies]
+dev = ["pytest", "flake8", "sphinx"]
