@@ -3,7 +3,6 @@
 # tests_graph_utils.py
 # 
 # Created by Nicolas Fricker on 08/28/2025.
-# Copyright © 2025 Nicolas Fricker. All rights reserved.
 # 
 
 import pytest

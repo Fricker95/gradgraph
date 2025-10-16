@@ -3,7 +3,6 @@
 # layers.py
 # 
 # Created by Nicolas Fricker on 08/22/2025.
-# Copyright © 2025 Nicolas Fricker. All rights reserved.
 # 
 
 from __future__ import annotations
@@ -61,6 +60,7 @@ class Embedding(tf.keras.layers.Embedding):
         if hasattr(self, '_embeddings'):
             self._embeddings.trainable = self.trainable
             self._embeddings._is_local = getattr(self, '_is_local', False)
+            self._embeddings.name = self.name
 
 class BasePDESystemLayer(tf.keras.layers.Layer):
     def __init__(self, *args, **kwargs):

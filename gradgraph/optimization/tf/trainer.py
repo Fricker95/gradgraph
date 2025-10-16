@@ -3,7 +3,6 @@
 # trainer.py
 # 
 # Created by Nicolas Fricker on 08/22/2025.
-# Copyright © 2025 Nicolas Fricker. All rights reserved.
 # 
 
 import warnings
@@ -112,7 +111,9 @@ class BasePDESystemTrainer(tf.keras.Model):
             )
             self._loss_tracker.update_state(
                 unscale_loss_for_distribution(loss),
-                sample_weight=tf.shape(tf.keras.tree.flatten(x)[0])[0],
+                sample_weight=tf.shape(
+                    next(i for i in tf.keras.tree.flatten(x) if i is not None)
+                )[0]
             )
             if self.optimizer is not None:
                 loss = self.optimizer.scale_loss(loss)

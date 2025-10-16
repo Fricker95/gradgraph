@@ -3,7 +3,6 @@
 # features.py
 # 
 # Created by Nicolas Fricker on 08/20/2025.
-# Copyright © 2025 Nicolas Fricker. All rights reserved.
 # 
 
 import numpy as np

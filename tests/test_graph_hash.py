@@ -3,7 +3,6 @@
 # test_graph_hash.py
 # 
 # Created by Nicolas Fricker on 08/22/2025.
-# Copyright © 2025 Nicolas Fricker. All rights reserved.
 # 
 
 import pytest
